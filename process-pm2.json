@@ -1,0 +1,25 @@
+{
+  "apps":[
+    {
+      "name": "video-parser",
+      "cwd": "/code/video-parser/",
+      "script": "/code/video-parser/app.js",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "error_file": "/var/log/node/video-parser/video-parser-err.log",
+      "out_file": "/var/log/node/video-parser/video-parser-out.log",
+      "pid_file": "/tmp/pm2-log/outlogs/video-parser.pid",
+      "instance_var": "INSTANCE_ID",
+      "instances": 1,
+      "node_args": "",
+      "min_uptime": "20s",
+      "max_restarts": 30,
+      "watch": false,
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
