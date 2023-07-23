@@ -18,17 +18,120 @@ Video-Parser 的目标是解析海内外主流视频网站的视频地址，目�
 ## 接口
 
 ### 抖音
-* 获取原始链接 `/api/dy/originalUrlFetch`
-* 获取直播间信息 `/api/dy/fetchLiveRoomInfo`
-* 综合搜索 `/api/dy/generalSearch`
-* 视频搜索 `/api/dy/videoSearch`
-* 话题搜索 `/api/dy/topicSearch`
-* 获取用户视频列表 `/api/dy/getUserVideos`
-* 获取用户信息 `/api/dy/getUserInfo`
-* 获取用户评论 `/api/dy/getVideoComments`
-* 获取视频信息 `/api/dy/getVideoDetail`
+* 获取原始链接 `/api/dy/originalUrlFetch` `POST`
+* 获取直播间信息 `/api/dy/fetchLiveRoomInfo` `POST`
+* 综合搜索 `/api/dy/generalSearch` `GET`
+* 视频搜索 `/api/dy/videoSearch` `GET`
+* 话题搜索 `/api/dy/topicSearch` `GET`
+* 获取用户视频列表 `/api/dy/getUserVideos` `GET`
+* 获取用户信息 `/api/dy/getUserInfo` `GET`
+* 获取用户评论 `/api/dy/getVideoComments` `GET`
+* 获取视频信息 `/api/dy/getVideoDetail` `GET`
 
 说明：其他接口需要传的参数往往可以调用`获取原始链接`获取相应的链接，如获取视频评论需要传视频id，可以将视频链接转换原始链接获取视频id。
+
+
+## 例子
+
+BASE_URL: `http://localhost:3000`
+
+### 抖音
+
+#### 获取原始链接
+
+* **请求地址**：`/api/dy/originalUrlFetch`
+* **请求方式**：`POST`
+* **请求参数**：`json`
+
+```json
+{
+  "share_info": "2.00 OxF:/ 小荷才露尖尖角～  https://v.douyin.com/iVsR2SK/ 复制此链接，打开Dou音搜索，直接观看视频！"
+}
+```
+
+* 响应参数：`json`
+
+```json
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "original_url": "https://www.iesdouyin.com/share/video/7257768974631374115/?region=CN&mid=6984719806654089992&u_code=0&did=MS4wLjABAAAAbqVwCUBSDPsPpMvTx0vOuEduviBhgeXBDDMBqJYrSpkKOz8kHRuu7fVYM11smy75&iid=MS4wLjABAAAANwkJuWIRFOzg5uCpDRpMj4OX-QryoDgn-yYlXQnRwQQ&with_sec_did=1&titleType=title&share_sign=rIjKXqSq7BmP1zv22aQW8oWg.6HvSSBDPJhgiH4LmIg-&share_version=170400&ts=1689845499&from_ssr=1&from=web_code_link"
+  }
+}
+```
+
+---
+
+#### 获取直播间信息
+
+* **请求地址**：`/api/dy/fetchLiveRoomInfo`
+* **请求方式**：`POST`
+* **请求参数**：`json`
+
+```json
+{
+  "live_url": "https://v.douyin.com/kD1pKKR"
+}
+```
+
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 综合搜索
+
+* **请求地址**：`/api/dy/generalSearch?keyword=陕西文化&sort_type=0&publish_time=0&offset=0&count=10`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 视频搜索
+
+* **请求地址**：`/api/dy/videoSearch?keyword=陕西文化&sort_type=0&publish_time=0&offset=0&count=10`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 话题搜索
+
+* **请求地址**：`/api/dy/topicSearch?keyword=陕西文化&sort_type=0&publish_time=0&offset=0&count=10`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取用户主页视频列表
+
+* **请求地址**：`/api/dy/getUserVideos?sec_uid=MS4wLjABAAAA5qMD8Gzdcgq7HXUOviKB59i0-ybJ59jJvNzyaPt5XOsVNqP6DU7WLcoAXvdxvYdp&count=15&max_cursor=0`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取用户信息
+
+* **请求地址**：`/api/dy/getUserInfo?sec_uid=MS4wLjABAAAA5qMD8Gzdcgq7HXUOviKB59i0-ybJ59jJvNzyaPt5XOsVNqP6DU7WLcoAXvdxvYdp`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取视频评论
+
+* **请求地址**：`/api/dy/getVideoComments?aweme_id=6958148148680857863&count=20&cursor=0`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取视频详情
+
+* **请求地址**：`/api/dy/getVideoDetail?aweme_id=7055666575176781069`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
 
 ## 部署
 
