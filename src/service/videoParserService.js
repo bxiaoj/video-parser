@@ -87,13 +87,13 @@ async function topicSearch(keyword, sort_type, publish_time, offset, count) {
 
 /**
  * get user videos
- * @param sec_user_id
+ * @param sec_uid
  * @param count
  * @param max_cursor
  * @returns {Promise<null|any>}
  */
-async function getUserVideos(sec_user_id, count, max_cursor) {
-    const resp = await httpClient.get(httpClient.buildUrl(API.BASE_URL, API.DY_USER_VIDEOS, {sec_user_id, count, max_cursor}), 'json');
+async function getUserVideos(sec_uid, count, max_cursor) {
+    const resp = await httpClient.get(httpClient.buildUrl(API.BASE_URL, API.DY_USER_VIDEOS, {sec_uid, count, max_cursor}), 'json');
     if (resp.status === 200 && resp.data && resp.data.code === 200) {
         return resp.data.data;
     }

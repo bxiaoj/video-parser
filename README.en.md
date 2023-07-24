@@ -1,6 +1,6 @@
 # Video-Parser
 
-[中文](README.md)
+[简体中文](README.md) | English
 
 Video-Parser's goals to analyze the video addresses of mainstream video websites at home and abroad. The currently supported websites are: Douyin, and more websites will be supported in the future (Kuaishou, Tiktok, YouTube, Bilibili, Douyu, Huya, etc.).
 

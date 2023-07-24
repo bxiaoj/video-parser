@@ -1,6 +1,6 @@
 # Video-Parser
 
-[English](README.en.md)
+简体中文 | [English](README.en.md)
 
 Video-Parser 的目标是解析海内外主流视频网站的视频地址，目前支持的网站有：抖音，后续还会支持更多的网站（快手，Tiktok，YouTube，B站，斗鱼，虎牙等）。
 

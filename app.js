@@ -82,10 +82,10 @@ app.get('/api/dy/topicSearch', validateParams(['keyword', 'sort_type', 'publish_
     }
 });
 
-app.get('/api/dy/getUserVideos', validateParams(['sec_user_id', 'count', 'max_cursor']), async (req, res) => {
-    const { sec_user_id, count, max_cursor } = req.query;
+app.get('/api/dy/getUserVideos', validateParams(['sec_uid', 'count', 'max_cursor']), async (req, res) => {
+    const { sec_uid, count, max_cursor } = req.query;
     try {
-        const data = await videoParserService.getUserVideos(sec_user_id, count, max_cursor);
+        const data = await videoParserService.getUserVideos(sec_uid, count, max_cursor);
         if (!data) {
             return new Response(res).fail('get user videos Error');
         }
@@ -95,10 +95,10 @@ app.get('/api/dy/getUserVideos', validateParams(['sec_user_id', 'count', 'max_cu
     }
 });
 
-app.get('/api/dy/getUserInfo', validateParams(['sec_user_id']), async (req, res) => {
-    const { sec_user_id } = req.query;
+app.get('/api/dy/getUserInfo', validateParams(['sec_uid']), async (req, res) => {
+    const { sec_uid } = req.query;
     try {
-        const data = await videoParserService.getUserInfo(sec_user_id);
+        const data = await videoParserService.getUserInfo(sec_uid);
         if (!data) {
             return new Response(res).fail('get user info Error');
         }
