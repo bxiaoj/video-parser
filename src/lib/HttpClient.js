@@ -1,7 +1,7 @@
 const axios = require('axios');
 const Constants = require('./Constants');
 
-class DyHttpClient {
+class HttpClient {
     constructor(customHeaders, axiosOptions) {
 
         this.axiosInstance = axios.create({
@@ -27,4 +27,4 @@ class DyHttpClient {
     }
 }
 
-module.exports = DyHttpClient;
+module.exports = HttpClient;

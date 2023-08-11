@@ -27,9 +27,21 @@ Disclaimer: This project is only for learning and communication, not for commerc
 * Get user information `/api/dy/getUserInfo` `GET`
 * Get user comments `/api/dy/getVideoComments` `GET`
 * Get video information `/api/dy/getVideoDetail` `GET`
+* Get user recent video list simple `/api/dy/getUserVideosSimpleRecent` `GET`
 
 Note: For other interfaces that need to pass parameters, you can often call `Get Original Link` to get the corresponding link. For example, if you need to pass the video id to get video comments, you can convert the video link to the original link to get the video id.
 
+### Tiktok
+* Get the original URL `/api/tk/originalUrlFetch` `POST`
+* Get live room information `/api/tk/fetchLiveRoomInfo` `POST`
+* Get user information `/api/tk/getUserInfo` `GET`
+* Get user video list `/api/tk/getUserVideos` `GET`
+* Get video information `/api/tk/getVideoDetail` `GET`
+
+Note: For other interfaces that need to pass parameters, you can often call `Get Original Link` to get the corresponding link. For example, if you need to pass the video id to get video comments, you can convert the video link to the original link to get the video id.
+
+### Utils
+* Get IP detail information `/api/utils/queryIp` `GET`
 
 ## example
 
@@ -132,6 +144,88 @@ BASE_URL: `http://localhost:3000`
 * **Request URL**: `/api/dy/getVideoDetail?aweme_id=7055666575176781069`
 * **Request method**: `GET`
 * **Response parameter**: `json` (the content is too long, not shown here)
+
+---
+
+#### Get user recent video list simple
+
+* **Request URL**: `/api/dy/getUserVideosSimpleRecent?sec_uid=MS4wLjABAAAA5qMD8Gzdcgq7HXUOviKB59i0-ybJ59jJvNzyaPt5XOsVNqP6DU7WLcoAXvdxvYdp`
+* **Request method**: `GET`
+* **Response parameter**: `json` (the content is too long, not shown here)
+
+### Tiktok
+
+#### Get original link
+
+* **Request URL**：`/api/tk/originalUrlFetch`
+* **Request method**：`POST`
+* **Response parameter**：`json`
+
+```json
+{
+  "share_info": "https://www.tiktok.com/t/ZTRypfB5D/"
+}
+```
+
+* Response parameter：`json`
+
+```json
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "original_url": "https://www.tiktok.com/video/7257768974631374115"
+  }
+}
+```
+
+---
+
+#### Get live room information
+
+* **Request URL**：`/api/tk/fetchLiveRoomInfo`
+* **Request method**：`POST`
+* **Response parameter**：`json`
+
+```json
+{
+  "live_url": "https://www.tiktok.com/t/ZTRypfB5D/"
+}
+```
+
+* **Response parameter**：`json` (the content is too long, not shown here)
+
+---
+
+#### Get user homepage video list
+
+* **Request URL**：`/api/tk/getUserVideos?sec_uid=MS4wLjABAAAAhgKK-EJ_9MmIP0LNyu6-pFEhiffelae0N0c3xdxFymHFseWJ-SsTRqm9AIiIUTtI&count=30&cursor=0`
+* **Request method**：`GET`
+* **Response parameter**：`json` (the content is too long, not shown here)
+
+---
+
+#### Get user information
+
+* **Request URL**：`/api/tk/getUserInfo?sec_uid=MS4wLjABAAAAhgKK-EJ_9MmIP0LNyu6-pFEhiffelae0N0c3xdxFymHFseWJ-SsTRqm9AIiIUTtI`
+* **Request method**：`GET`
+* **Response parameter**：`json` (the content is too long, not shown here)
+
+---
+
+#### Get Video Details
+
+* **Request URL**：`/api/tk/getVideoDetail?unique_id=unpai3`
+* **Request method**：`GET`
+* **Response parameter**：`json` (the content is too long, not shown here)
+
+### Utils
+
+#### Get IP address or Host detail information
+
+* **Request URL**：`/api/utils/queryIp?host=baidu.com`
+* **Request method**：`GET`
+* **Response parameter**：`json`
 
 ## deployment
 

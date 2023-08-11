@@ -27,8 +27,21 @@ Video-Parser 的目标是解析海内外主流视频网站的视频地址，目�
 * 获取用户信息 `/api/dy/getUserInfo` `GET`
 * 获取用户评论 `/api/dy/getVideoComments` `GET`
 * 获取视频信息 `/api/dy/getVideoDetail` `GET`
+* 获取用户最近视频列表简版 `/api/dy/getUserVideosSimpleRecent` `GET`
 
 说明：其他接口需要传的参数往往可以调用`获取原始链接`获取相应的链接，如获取视频评论需要传视频id，可以将视频链接转换原始链接获取视频id。
+
+### Tiktok
+* 获取原始链接 `/api/tk/originalUrlFetch` `POST`
+* 获取直播间信息 `/api/tk/fetchLiveRoomInfo` `POST`
+* 获取用户视频列表 `/api/tk/getUserVideos` `GET`
+* 获取用户信息 `/api/tk/getUserInfo` `GET`
+* 获取视频信息 `/api/tk/getVideoDetail` `GET`
+
+说明：其他接口需要传的参数往往可以调用`获取原始链接`获取相应的链接，如获取视频评论需要传视频id，可以将视频链接转换原始链接获取视频id。
+
+### 工具
+* Ip详细信息查询 `/api/utils/queryIp` `GET`
 
 
 ## 例子
@@ -132,6 +145,88 @@ BASE_URL: `http://localhost:3000`
 * **请求地址**：`/api/dy/getVideoDetail?aweme_id=7055666575176781069`
 * **请求方式**：`GET`
 * **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取用户最近视频列表简版
+
+* **请求地址**：`/api/dy/getUserVideosSimpleRecent?sec_uid=MS4wLjABAAAA5qMD8Gzdcgq7HXUOviKB59i0-ybJ59jJvNzyaPt5XOsVNqP6DU7WLcoAXvdxvYdp`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+### Tiktok
+
+#### 获取原始链接
+
+* **请求地址**：`/api/tk/originalUrlFetch`
+* **请求方式**：`POST`
+* **请求参数**：`json`
+
+```json
+{
+  "share_info": "https://www.tiktok.com/t/ZTRypfB5D/"
+}
+```
+
+* 响应参数：`json`
+
+```json
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "original_url": "https://www.tiktok.com/video/7257768974631374115"
+  }
+}
+```
+
+---
+
+#### 获取直播间信息
+
+* **请求地址**：`/api/tk/fetchLiveRoomInfo`
+* **请求方式**：`POST`
+* **请求参数**：`json`
+
+```json
+{
+  "live_url": "https://www.tiktok.com/t/ZTRypfB5D/"
+}
+```
+
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取用户主页视频列表
+
+* **请求地址**：`/api/tk/getUserVideos?sec_uid=MS4wLjABAAAAhgKK-EJ_9MmIP0LNyu6-pFEhiffelae0N0c3xdxFymHFseWJ-SsTRqm9AIiIUTtI&count=30&cursor=0`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取用户信息
+
+* **请求地址**：`/api/tk/getUserInfo?sec_uid=MS4wLjABAAAAhgKK-EJ_9MmIP0LNyu6-pFEhiffelae0N0c3xdxFymHFseWJ-SsTRqm9AIiIUTtI`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+---
+
+#### 获取视频详情
+
+* **请求地址**：`/api/tk/getVideoDetail?unique_id=unpai3`
+* **请求方式**：`GET`
+* **响应参数**：`json` （内容太长，此处不展示）
+
+### 工具
+
+#### Ip或host详细信息查询
+
+* **请求地址**：`/api/utils/queryIp?host=baidu.com`
+* **请求方式**：`GET`
+* **请求参数**：`json`
 
 ## 部署
 

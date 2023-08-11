@@ -16,6 +16,13 @@ module.exports = {
         DY_USER_INFO: '/dy/getUserInfo',
         DY_VIDEO_COMMENTS: '/dy/getVideoComments',
         DY_VIDEO_DETAIL: '/dy/getVideoDetail',
+        DY_USER_VIDEOS_SIMPLE_RECENT: '/dy/getUserVideosSimpleRecent',
+        TK_USER_INFO: '/tk/getUserInfo',
+        TK_VIDEO_DETAIL: '/tk/getVideoDetail',
+        TK_USER_VIDEOS: '/tk/getUserVideos',
+        TK_ORIGINAL_URL_CONVERT: '/tk/originalUrlFetch',
+        TK_FETCH_LIVE_ROOM_INFO: '/tk/fetchLiveRoomInfo',
+        UT_QUERY_IP: '/utils/queryIp',
     }
 
 }
